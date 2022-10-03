@@ -50,7 +50,7 @@ func SearchUser(c *gin.Context) {
 func GetUser(c *gin.Context) {
 
 	if err := oauth.AuthenticationRequest(c.Request); err != nil {
-		c.JSON(err.Status, err)
+		c.JSON(err.Status(), err)
 		return
 	}
 
